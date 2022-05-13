@@ -1,4 +1,4 @@
-var key=config.SECRET_API_KEY;
+var key="7d2c51851e51f80d638e48e1e8b79741";
 
 const weather=async function (lat,lon,unit="metric") {
     try {
