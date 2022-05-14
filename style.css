@@ -12,15 +12,6 @@ body {
         
 }   
 
-input#loc::before{
-    
-    background-image: url("../dashboard/images/search.png") ;
-   
- }
-
- .search-box {
-     color:red;
- }
 
  .container {
     background-image: url("./images/weather.png") ;
