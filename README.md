@@ -1,2 +1,2 @@
 # weather
-https://servet-k.github.io/weather/
+http://havadurumu.great-site.net/
