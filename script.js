@@ -31,7 +31,7 @@ const weather=async function (lat,lon,unit="metric") {
 const place=async function(city){
     try {
        
-        const location= await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${key}`)
+        const location= await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${key}`)
         const jsonloc= await location.json()
         let     lat=    jsonloc[0].lat;
         let     lon=    jsonloc[0].lon;

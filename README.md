@@ -1,2 +1,2 @@
-# weather
-https://servet-k.github.io/weather/
+# weather application
+
