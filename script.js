@@ -12,13 +12,13 @@ const weather=async function (lat,lon,unit="metric") {
    const date=time.toDateString();
    const hour=time.toLocaleTimeString();
 
-   document.querySelector(".left").innerText="temperature: "+jsonData.main.temp+ "\u00B0"+"C" +`\n\n`+jsonData.weather[0].description;
+   document.querySelector(".left").innerText ="Temperature: "+jsonData.main.temp+ "\u00B0"+"C" +`\n\n`+jsonData.weather[0].description;
    document.querySelector(".right").innerText="Humidity: "+jsonData.main.humidity+ " %" +`\n\n`+"pressure: "+jsonData.main.pressure; 
    
    document.getElementById("sunrise").innerText=   "sunrise: " +   sunrise.toLocaleString();
    
     document.getElementById("sunset").innerText=    "sunset: "  +   sunset.toLocaleString();
-    document.getElementById("time").innerText=      "Time: "    +   date+" "+hour;
+    document.getElementById("time").innerText=     date+" "+hour;
     
         
     } catch (error) {
@@ -50,3 +50,14 @@ document.getElementById("loc").addEventListener('change',(e)=>{
 })
 
 place("istanbul");
+
+const chuck=async function(){
+    try {
+        const response=await fetch("https://api.chucknorris.io/jokes/random")
+        const jsonData= await response.json();
+        document.getElementById("chuck").innerText= jsonData.value;
+    } catch (error) {
+        
+    }
+}
+chuck();

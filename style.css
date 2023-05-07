@@ -66,4 +66,12 @@ body {
      align-items: center;
      justify-content: center;
      padding:20px;
+     font-size: 30px;
+}
+.chuck{
+    color:floralwhite;
+    font-family: cursive ,'Courier New', Courier, monospace;
+    line-height: 1.5em;
+    width :50%;
+    margin-left:25%;
 }
