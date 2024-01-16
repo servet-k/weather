@@ -25,8 +25,8 @@ body {
 
 
  .container {
-    background-image: url("./images/weather.png") ;
-    background-size: cover; 
+   /* background-image: url("./images/weather.png") ;
+    background-size: cover; */
     height: 100vh;
     margin:0;
     outline: 2px solid red;
