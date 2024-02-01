@@ -56,7 +56,7 @@ document.getElementById("loc").addEventListener('change', (e) => {
 })
 
 place("istanbul");
-
+/*
 const chuck = async function () {
     try {
         const response = await fetch("https://api.chucknorris.io/jokes/random")
@@ -67,3 +67,4 @@ const chuck = async function () {
     }
 }
 chuck();
+*/
