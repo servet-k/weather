@@ -86,3 +86,15 @@ body {
     width :50%;
     margin-left:25%;
 }
+
+input{
+
+    border: 3px solid rgb(15, 124, 202);
+    border-radius: 3px;
+    min-width: 250px;
+    color:rgb(15, 113, 218);
+    font-weight: bold;
+}
+::placeholder{
+    color:rgb(203, 28, 177);
+}
