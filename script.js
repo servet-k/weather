@@ -53,7 +53,12 @@ const forecast = async function (lat, lon, unit = "metric") {
         document.querySelector(`.day-${i}`).querySelector(".date").innerText = `Date: ${date}`;
         document.querySelector(`.day-${i}`).querySelector(".temp").innerText = `Temp: ${temp}\u00B0C`;
         document.querySelector(`.day-${i}`).querySelector(".description").innerText = `Description: ${description}`;
+<<<<<<< HEAD
     
+=======
+  
+        // Update the webpage with the forecast data    
+>>>>>>> cfd11f0bd61a3e5d32c1db5d931e30568842496b
     }
 
     } catch (error) {
