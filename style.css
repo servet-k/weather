@@ -12,7 +12,7 @@ html {
 html,body{
     margin:0;
     padding:0;
-   
+    font-family: Arial, sans-serif;
 }
 body {
      
@@ -25,8 +25,7 @@ body {
 
 
  .container {
-   /* background-image: url("./images/weather.png") ;
-    background-size: cover; */
+   padding: 20px;
     height: 100vh;
     margin:0;
    /* outline: 2px solid red;*/
@@ -37,6 +36,8 @@ body {
      "header header header"
      "left   middle right"
      "footer footer footer";
+     
+
 
 }
 
@@ -79,13 +80,7 @@ body {
      padding:20px;
      font-size: 30px;
 }
-.chuck{
-    color:floralwhite;
-    font-family: cursive ,'Courier New', Courier, monospace;
-    line-height: 1.5em;
-    width :50%;
-    margin-left:25%;
-}
+
 
 input{
 
@@ -98,3 +93,58 @@ input{
 ::placeholder{
     color:rgb(203, 28, 177);
 }
+.forecast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .day-0, .day-8, .day-16, .day-24, .day-32 {
+    background-color: #e3d2d2;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: calc(20% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: grey;
+  }
+  
+  .day-0 h2, .day-8 h2, .day-16 h2, .day-24 h2, .day-32 h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: rgba(208, 15, 47, 0.897);
+  }
+  
+  .day-0 p, .day-8 p, .day-16 p, .day-24 p, .day-32 p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color:#337ab7
+  }
+  
+  .day-0 img, .day-8 img, .day-16 img, .day-24 img, .day-32 img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 50%;
+  }
+  .header h1 {
+    font-size: 36px;
+    /* ... */
+  }
+  a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .forecast-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+
+  }

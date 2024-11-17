@@ -34,6 +34,32 @@ const weather = async function (lat, lon, unit = "metric") {
 
 }
 
+const forecast = async function (lat, lon, unit = "metric") {
+    try {
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${unit}&appid=${key}`);
+      const jsonData = await response.json();
+  
+      const forecastData = jsonData.list;
+      
+      // Loop through the forecast data and get the weather data for each day
+      for (let i = 0; i < forecastData.length; i += 8) {
+        const dayData = forecastData[i];
+        const date = new Date(dayData.dt * 1000).toDateString();
+        const temp = dayData.main.temp;
+        const description = dayData.weather[0].description;
+  
+        // Update the webpage with the forecast data
+        
+        document.querySelector(`.day-${i}`).querySelector(".date").innerText = `Date: ${date}`;
+        document.querySelector(`.day-${i}`).querySelector(".temp").innerText = `Temp: ${temp}\u00B0C`;
+        document.querySelector(`.day-${i}`).querySelector(".description").innerText = `Description: ${description}`;
+    
+    }
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
 const place = async function (city) {
     try {
 
@@ -44,6 +70,7 @@ const place = async function (city) {
 
         document.getElementById("city").innerText = jsonloc[0].name;
         weather(lat, lon);
+        forecast(lat, lon);
 
     } catch (error) {
         console.log(error);
@@ -56,15 +83,4 @@ document.getElementById("loc").addEventListener('change', (e) => {
 })
 
 place("istanbul");
-/*
-const chuck = async function () {
-    try {
-        const response = await fetch("https://api.chucknorris.io/jokes/random")
-        const jsonData = await response.json();
-        document.getElementById("chuck").innerText = jsonData.value;
-    } catch (error) {
 
-    }
-}
-chuck();
-*/
