@@ -37,6 +37,7 @@ body {
      "left   middle right"
      "footer footer footer";
      
+     
 
 
 }
@@ -147,4 +148,9 @@ input{
     text-align: center;
     color: white;
 
+  }
+
+  .map{
+    color:rgb(240, 146, 220);
+    text-align: center;
   }

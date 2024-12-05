@@ -9,14 +9,19 @@
     <meta name="theme-color" content="#e19c2c" />
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
     <title>Weather App</title>
 </head>
 
 <body>
+      
     <div class="container">
         <div class="header">
             <h1>Weather Application</h1>
             <h2 id="city"></h2>
+            <div class="map"></div> 
             <!-- <h2 class="chuck">Chuck Norris Jokes</h2>
             <p class="chuck" id="chuck"></p>
         -->
@@ -32,36 +37,39 @@
 
         </div>
         <div class="right"></div>
+        
         <div class="footer">
             <div id="time"></div>
             <div id="sunrise"></div>
             <div id="sunset"></div>
         </div>
+       
     </div>
+    
     <h1 class="forecast-title">5-Day Forecast</h1>
     <div class="forecast">
         <div class="day-0">
-            <h2 class="date"></h2>
+            <h2 class="date">Date:</h2>
             <p class="temp"></p>
             <p class="description"></p>
         </div>
         <div class="day-8">
-            <h2 class="date"></h2>
+            <h2 class="date">Date:</h2>
             <p class="temp"></p>
             <p class="description"></p>
         </div>
         <div class="day-16">
-            <h2 class="date"></h2>
+            <h2 class="date">Date:</h2>
             <p class="temp"></p>
             <p class="description"></p>
         </div>
         <div class="day-24">
-            <h2 class="date"></h2>
+            <h2 class="date">Date:</h2>
             <p class="temp"></p>
             <p class="description"></p>
         </div>
         <div class="day-32">
-            <h2 class="date"></h2>
+            <h2 class="date">Date:</h2>
             <p class="temp"></p>
             <p class="description"></p>
         </div>
