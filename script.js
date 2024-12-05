@@ -1,4 +1,6 @@
-var key = "7d2c51851e51f80d638e48e1e8b79741";
+const key = "7d2c51851e51f80d638e48e1e8b79741";
+const geo_key="67425e00bc61f295751263mgb6f0224";
+   
 
 const weather = async function (lat, lon, unit = "metric") {
     try {
@@ -16,8 +18,11 @@ const weather = async function (lat, lon, unit = "metric") {
         document.getElementById("sunrise").innerText = "sunrise: " + sunrise.toLocaleString();
 
         document.getElementById("sunset").innerText = "sunset: " + sunset.toLocaleString();
-
-
+        
+        const geo_response = await fetch(`https://geocode.maps.co/reverse?lat=${lat}&lon=${lon}&api_key=${geo_key}`);
+        const geo_jsonData = await geo_response.json();
+        console.log(geo_jsonData);
+        document.querySelector(".map").innerHTML =geo_jsonData.display_name 
         setInterval(() => {
             const time = new Date();
             const date = time.toDateString();
@@ -53,7 +58,8 @@ const forecast = async function (lat, lon, unit = "metric") {
         document.querySelector(`.day-${i}`).querySelector(".date").innerText = `Date: ${date}`;
         document.querySelector(`.day-${i}`).querySelector(".temp").innerText = `Temp: ${temp}\u00B0C`;
         document.querySelector(`.day-${i}`).querySelector(".description").innerText = `Description: ${description}`;
-    
+  
+        // Update the webpage with the forecast data    
     }
 
     } catch (error) {
@@ -67,10 +73,12 @@ const place = async function (city) {
         const jsonloc = await location.json()
         let lat = jsonloc[0].lat;
         let lon = jsonloc[0].lon;
-
+        console.log(lat, lon);
         document.getElementById("city").innerText = jsonloc[0].name;
         weather(lat, lon);
         forecast(lat, lon);
+        
+      
 
     } catch (error) {
         console.log(error);
