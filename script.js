@@ -7,7 +7,7 @@ const weather = async function (lat, lon, unit = "metric") {
 
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${unit}&appid=${key}`);
         const jsonData = await response.json();
-
+        
         const sunrise = new Date(jsonData.sys.sunrise * 1000)
         const sunset = new Date(jsonData.sys.sunset * 1000)
 
@@ -21,7 +21,7 @@ const weather = async function (lat, lon, unit = "metric") {
         
         const geo_response = await fetch(`https://geocode.maps.co/reverse?lat=${lat}&lon=${lon}&api_key=${geo_key}`);
         const geo_jsonData = await geo_response.json();
-        console.log(geo_jsonData);
+        //console.log(geo_jsonData);
         document.querySelector(".map").innerHTML =geo_jsonData.display_name 
         setInterval(() => {
             const time = new Date();
@@ -43,13 +43,14 @@ const forecast = async function (lat, lon, unit = "metric") {
     try {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${unit}&appid=${key}`);
       const jsonData = await response.json();
-  
+    
       const forecastData = jsonData.list;
-      
+      //console.log(forecastData[4]);
       // Loop through the forecast data and get the weather data for each day
       for (let i = 0; i < forecastData.length; i += 8) {
-        const dayData = forecastData[i];
-        const date = new Date(dayData.dt * 1000).toDateString();
+        const dayData = forecastData[i+4];
+       // const date = new Date(dayData.dt * 1000).toDateString();
+       const date=dayData.dt_txt
         const temp = dayData.main.temp;
         const description = dayData.weather[0].description;
   
