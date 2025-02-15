@@ -48,7 +48,7 @@ const forecast = async function (lat, lon, unit = "metric") {
       //console.log(forecastData[4]);
       // Loop through the forecast data and get the weather data for each day
       for (let i = 0; i < forecastData.length; i += 8) {
-        const dayData = forecastData[i+4];
+        const dayData = forecastData[i];
        // const date = new Date(dayData.dt * 1000).toDateString();
        const date=dayData.dt_txt
         const temp = dayData.main.temp;
